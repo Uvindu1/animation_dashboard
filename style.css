@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,100;1,200&family=Roboto:ital,wght@0,400;1,300&family=Yellowtail&display=swap');
+
+
+/*Reset Style*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*containt*/
+body{
+    background-color: #30336b;
+    color: #fff;
+    font-family: 'Roboto',sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);/*mehidi kiyanne columns 4 kata kadanna kiyala*/
+    grid-gap: 10px;/*block athar watenma gap ekak hadanoo */
+    position: relative;/*ona ona vidiyata wenas karanna ona nisa*/
+    margin-top: 10px;
+}
+
+h3{
+    font-size: 45px;
+    font-weight: 300;
+    margin: 10px;/*wateta ramuwak hadaganna*/
+}
+
+h3 span{
+    font-size: 20px;
+}
+p{
+    font-size: 20px;
+}
+
+/*Set Boxer*/
+.container > div{/*container class ekata passe thiyana div class tika*/
+    cursor: pointer;
+    height: 220px;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;/*meken thamaii appi add karana image eka sema dive ekakatama adalawa fixe wela hedenne(neththam image eka add karama sema dive ekakatama ekaganee add weii)*/
+    /*flex box to center content of each div*/
+    display: flex;/*meka danne okkoma medata danna*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /*Transition*/
+    transition: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+}
+
+/*Blur backgrond*/
+.container:hover div{/*mein kitawenne conteiner class ekata adalawa mouse eka aran giyama eke thiyana dive walata*/
+    /*kisiyam mouse eka adla parase selauname dive wala opesiti eka aduwenna*/
+    opacity: 0.1;/*mouse eka kohata aran giyath opesiti eka aduwenooo.. den karanna ona adala dive eka udaya giyama eka seen wenna ona*/
+}
+
+.container > div:hover{/*continer class eke div ekak udata mouse eka genichama ehi opesity eka 0.7k wenna*/
+    /*div eke mouse eka sela unama opacity eka wediwenna*/
+    opacity: 0.7;
+    transform: scale(1.05);
+    color: #130f40;
+
+}
+
+
+/*add to image*/
+.size1{
+    background: url(./images/img2.jpg);
+    color: #353b48;
+
+    /*Animation*/
+    animation-name: entrance1;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+
+}
+@keyframes entrance1{
+    0%{
+        top: -1000px
+    }
+    100%{
+        top: 0;
+    }
+
+}
+
+.size2{
+    background: url(./images/img5.jpg);
+    color: #dcdde1;   
+    
+    animation-name: entrance2;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+@keyframes entrance2{
+    0%{
+        right: -2000px
+    }
+    100%{
+        right: 0;
+    }
+
+}
+
+/*Stretch Dive*/
+.container > div:nth-of-type(1){/*block athara space ganata anuwa sudo class yoda atha, palaweni darayata adalawa meya we */
+   grid-column: 1/3;/*palaweni histhenata adala colamaya */ 
+
+}
+
+
+.container > div:nth-of-type(4){
+    grid-column: 1/3;/*full page whight eka 3 kata kadala ekn ekaka wenakal kiyala kiyanne*/
+}
+
+
+.container > div:nth-of-type(9){
+    grid-column: 3/5;
+
+}
+
+.container >div:nth-of-type(10){
+    grid-column: 1/3;
+}
+
+.container >div:nth-of-type(11){
+    grid-column: 3/5;
+}
+
+
+/*Responsive*/
+@media(max-width:900px){
+    .container >div{
+        height: 195px;
+    }
+}
